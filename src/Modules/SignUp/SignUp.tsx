@@ -42,7 +42,6 @@ const SignUp = ({navigation}: SignUpProps) => {
         confirmPassword: '',
       });
       const allUsers = await getAsyncStorageItem(ASYNC_STORAGE_KEYS.users);
-      console.log('allUsers', allUsers);
       await storeAsyncStorageItem(
         ASYNC_STORAGE_KEYS.users,
         !isEmpty(allUsers) ? [...allUsers, userData] : [userData],

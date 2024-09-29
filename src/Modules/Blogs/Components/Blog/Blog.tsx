@@ -20,11 +20,10 @@ const Blog = ({
           }}
           style={BlogStyles.blogImage}
         />
-
         <View style={BlogStyles.blogRightContentContainer}>
           <View style={BlogStyles.blogViewsContainer}>
-            <Text>{`Blog type: ${blogContentType}`}</Text>
-            <Text>{`${blogViewsCount} views`}</Text>
+            <Text style={BlogStyles.blogAuthor}>{`Blog type: ${blogContentType}`}</Text>
+            <Text style={BlogStyles.blogAuthor}>{`${blogViewsCount} views`}</Text>
           </View>
           <Text style={BlogStyles.blogTitle}>{blogTitle}</Text>
           <Text style={BlogStyles.blogAuthor}>{`Author: ${blogAuthor}`}</Text>

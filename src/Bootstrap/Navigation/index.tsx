@@ -15,6 +15,7 @@ import {ASYNC_STORAGE_KEYS, getAsyncStorageItem} from '../AsyncStorage/index';
 import {ActivityIndicator} from 'react-native';
 import {isEmpty} from 'lodash';
 import UserContext from '../UserContext/UserContext';
+import { themeColors } from '../../Shared/Themes/index';
 
 const NonLoggedInStack = () => {
   return (
@@ -89,7 +90,7 @@ const RootNavigation = () => {
             options={{
               headerShown: false,
               tabBarIcon: () => (
-                <FoundationIcon name="social-blogger" size={30} />
+                <FoundationIcon name="social-blogger" size={30} color={themeColors.black}/>
               ),
             }}
           />
@@ -98,7 +99,7 @@ const RootNavigation = () => {
             component={AccountProfile}
             options={{
               headerShown: false,
-              tabBarIcon: () => <MaterialIcons name="account-box" size={30} />,
+              tabBarIcon: () => <MaterialIcons name="account-box" size={30} color={themeColors.black}/>,
             }}
           />
         </Tab.Navigator>

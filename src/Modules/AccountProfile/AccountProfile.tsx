@@ -7,6 +7,7 @@ import {
 import UserContext from '../../Bootstrap/UserContext/UserContext';
 import AccountProfileStyles from './Account.styles';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {themeColors} from '../../Shared/Themes/index';
 
 const AccountProfile = () => {
   const {loggedInUserDetails, fetchLoggedInUserDetails} =
@@ -23,6 +24,7 @@ const AccountProfile = () => {
         name="account-box"
         size={100}
         style={{alignSelf: 'center'}}
+        color={themeColors.black}
       />
       <Text style={AccountProfileStyles.userName}>
         User Name: {loggedInUserDetails?.name}

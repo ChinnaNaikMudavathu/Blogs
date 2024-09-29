@@ -17,8 +17,8 @@ const SignUpStyles = StyleSheet.create({
     backgroundColor: themeColors.gray,
   },
   inputContainer: {marginBottom: 16},
-  inputLabel: {marginBottom: 8},
-  inputText: {borderWidth: 0.5, borderRadius: 8},
+  inputLabel: {marginBottom: 8, color: themeColors.black},
+  inputText: {borderWidth: 0.5, borderRadius: 8, color: themeColors.black},
   buttonContainer: {
     flexDirection: 'row',
     marginBottom: 16,
