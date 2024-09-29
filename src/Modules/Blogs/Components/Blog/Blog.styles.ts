@@ -5,7 +5,7 @@ const BlogStyles = StyleSheet.create({
     blogContentContainer: {
         flexDirection: 'row',
       },
-      blogImage: {width: 100, height: 100, borderRadius: 24},
+      blogImage: {width: 100, height: 100, borderRadius: 24, marginRight: 8},
       blogRightContentContainer: {flex: 1},
       blogViewsContainer: {
         flexDirection: 'row',
