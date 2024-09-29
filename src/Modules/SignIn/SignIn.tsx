@@ -41,7 +41,8 @@ const SignIn = ({navigation}: SignInProps) => {
         const allUsers = await getAsyncStorageItem(ASYNC_STORAGE_KEYS.users);
 
         const findCurrentLoginUser = allUsers?.find(
-          (user: SignedInUserDetails) => user?.email === userData?.email,
+          (user: SignedInUserDetails) =>
+            user?.email?.toLowerCase() === userData?.email?.toLowerCase(),
         );
         if (
           !isEmpty(findCurrentLoginUser) &&
@@ -59,7 +60,10 @@ const SignIn = ({navigation}: SignInProps) => {
             findCurrentLoginUser,
           );
           fetchLoggedInUserDetails?.();
-        } else if (findCurrentLoginUser?.email !== userData?.email) {
+        } else if (
+          findCurrentLoginUser?.email?.toLowerCase() !==
+          userData?.email?.toLowerCase()
+        ) {
           setUserDataErrors(prevErrors => {
             return {
               ...prevErrors,
@@ -90,7 +94,7 @@ const SignIn = ({navigation}: SignInProps) => {
     }
   }, [userData]);
 
-  const handleOnPress = useCallback(() => {
+  const handleOnPressSignUp = useCallback(() => {
     navigation.navigate(ScreenNames.SignUp);
   }, []);
 
@@ -111,6 +115,7 @@ const SignIn = ({navigation}: SignInProps) => {
                 };
               });
             }}
+            placeholderTextColor={themeColors.black}
           />
           {invalidLoginDetails?.emailError ? (
             <Text style={{color: themeColors.red}}>
@@ -119,7 +124,7 @@ const SignIn = ({navigation}: SignInProps) => {
           ) : null}
         </View>
         <View style={SignInStyles.inputContainer}>
-          <Text style={{marginBottom: 8}}>Password:</Text>
+          <Text style={SignInStyles.inputLabel}>Password:</Text>
           <TextInput
             placeholder="Please enter password"
             style={SignInStyles.inputText}
@@ -132,6 +137,7 @@ const SignIn = ({navigation}: SignInProps) => {
                 };
               });
             }}
+            placeholderTextColor={themeColors.black}
           />
           {invalidLoginDetails?.passwordError ? (
             <Text style={{color: themeColors.red}}>
@@ -147,7 +153,7 @@ const SignIn = ({navigation}: SignInProps) => {
           </Text>
         ) : null}
         <View style={SignInStyles.buttonContainer}>
-          <TouchableOpacity onPress={handleOnPress}>
+          <TouchableOpacity onPress={handleOnPressSignUp}>
             <Text style={SignInStyles.buttonText}>Sign up</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={handleOnPressSignIn}>

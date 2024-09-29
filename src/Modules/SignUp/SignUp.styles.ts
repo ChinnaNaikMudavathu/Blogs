@@ -26,7 +26,12 @@ const SignUpStyles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 8,
   },
-  buttonText: {padding: 12, borderWidth: 0.5, borderRadius: 8},
+  buttonText: {
+    padding: 12,
+    borderWidth: 0.5,
+    borderRadius: 8,
+    color: themeColors.black,
+  },
 });
 
 export default SignUpStyles;

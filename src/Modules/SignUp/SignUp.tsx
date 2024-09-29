@@ -59,6 +59,7 @@ const SignUp = ({navigation}: SignUpProps) => {
           <Text style={SignUpStyles.inputLabel}>Name:</Text>
           <TextInput
             placeholder="Please enter your name"
+            placeholderTextColor={themeColors.black}
             style={SignUpStyles.inputText}
             onChangeText={text => {
               setUserData(prevData => {
@@ -80,6 +81,7 @@ const SignUp = ({navigation}: SignUpProps) => {
           <Text style={SignUpStyles.inputLabel}>Email:</Text>
           <TextInput
             placeholder="Please enter email"
+            placeholderTextColor={themeColors.black}
             style={SignUpStyles.inputText}
             onChangeText={text => {
               setUserData(prevData => {
@@ -101,6 +103,7 @@ const SignUp = ({navigation}: SignUpProps) => {
           <Text style={SignUpStyles.inputLabel}>Password:</Text>
           <TextInput
             placeholder="Please enter password"
+            placeholderTextColor={themeColors.black}
             style={SignUpStyles.inputText}
             onChangeText={text => {
               setUserData(prevData => {
@@ -122,6 +125,7 @@ const SignUp = ({navigation}: SignUpProps) => {
           <Text style={SignUpStyles.inputLabel}>Confirm password:</Text>
           <TextInput
             placeholder="Please enter confirm password"
+            placeholderTextColor={themeColors.black}
             style={SignUpStyles.inputText}
             onChangeText={text => {
               setUserData(prevData => {
