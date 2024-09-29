@@ -5,7 +5,6 @@ import {BlogDetailsProps} from './BlogDetails.models';
 import BlogDetailsStyles from './BlogDetails.styles';
 
 const BlogDetails = ({route}: BlogDetailsProps) => {
-  console.log('routes', route);
   const {
     blogImage = '',
     blogTitle = '',

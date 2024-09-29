@@ -63,7 +63,6 @@ const BlobDashBoardTab = () => {
 const RootNavigation = () => {
   const [loggedInUserDetails, setLoggedInUserDetails] = useState({});
   const [isLoadingUserDetails, setIsLoadingUserDetails] = useState(false);
-  console.log('loggedInUserDetails', loggedInUserDetails);
   const fetchLoggedInUserDetails = async () => {
     setIsLoadingUserDetails(true);
     try {
