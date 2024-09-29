@@ -46,7 +46,8 @@ const SignIn = ({navigation}: SignInProps) => {
         );
         if (
           !isEmpty(findCurrentLoginUser) &&
-          findCurrentLoginUser?.email === userData?.email &&
+          findCurrentLoginUser?.email?.toLowerCase() ===
+            userData?.email?.toLowerCase() &&
           findCurrentLoginUser?.password === userData?.password
         ) {
           setUserDataErrors({
@@ -95,6 +96,10 @@ const SignIn = ({navigation}: SignInProps) => {
   }, [userData]);
 
   const handleOnPressSignUp = useCallback(() => {
+    setUserData({
+      email: '',
+      password: '',
+    });
     navigation.navigate(ScreenNames.SignUp);
   }, []);
 

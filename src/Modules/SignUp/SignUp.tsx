@@ -52,6 +52,16 @@ const SignUp = ({navigation}: SignUpProps) => {
     }
   }, [userData]);
 
+  const handleOnPressSignIn = useCallback(() => {
+    setUserData({
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+    });
+    navigation.navigate(ScreenNames.SignIn);
+  }, []);
+
   return (
     <View style={SignUpStyles.container}>
       <View style={SignUpStyles.contentContainer}>
@@ -144,16 +154,11 @@ const SignUp = ({navigation}: SignUpProps) => {
           ) : null}
         </View>
         <View style={SignUpStyles.buttonContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate(ScreenNames.SignIn);
-            }}>
+          <TouchableOpacity onPress={handleOnPressSignIn}>
             <Text style={SignUpStyles.buttonText}>Sign in</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={SignUpStyles.buttonText}
-            onPress={handleOnPressSignUp}>
-            <Text>Sign up</Text>
+          <TouchableOpacity onPress={handleOnPressSignUp}>
+            <Text style={SignUpStyles.buttonText}>Sign up</Text>
           </TouchableOpacity>
         </View>
       </View>
